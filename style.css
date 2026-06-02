@@ -60,7 +60,7 @@
 html { scroll-behavior: smooth; }
 img  { display: block; max-width: 100%; }
 a    { text-decoration: none; color: inherit; }
-a:visited { color: inherit; }
+/*a:visited { color: inherit; }*/
 
 /* ═══════════════════════════════════════════════
    BASE
@@ -145,8 +145,8 @@ em {
    TEXTURE HELPER — applied to blue sections
 ═══════════════════════════════════════════════ */
 .hero,
-.episode,
 .hosts,
+.community,
 .footer {
   position: relative;
   background-color: var(--blue);
@@ -222,44 +222,70 @@ em {
 }
 
 /* ═══════════════════════════════════════════════
-   EPISODE
+   EPISODE  (yellow)
 ═══════════════════════════════════════════════ */
 .episode {
+  background-color: var(--yellow);
+  color: var(--blue);
   padding: var(--pad-y) var(--pad-x);
 }
 .episode .container {
-  position: relative;
-  z-index: 1;
   max-width: var(--max-w);
   margin: 0 auto;
 }
 .episode .label {
-  color: var(--white);
+  color: var(--blue);
 }
 .episode h2 {
   font-size: clamp(1.6rem, 3.5vw, 3rem);
   margin-bottom: 44px;
   line-height: 1.05;
+  color: var(--blue);
 }
 .episode h2 em {
-  color: var(--yellow);
+  color: var(--blue);
+  font-style: italic;
 }
 
-/* Spotify/Apple/YouTube embed — drop iframe here when live */
 .episode iframe {
   border-radius: 12px;
   max-width: 700px;
   width: 100%;
+  margin-bottom: 36px;
 }
 
-.episode-coming {
+.platform-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 700px;
+}
+
+.platform-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border: 2px solid var(--blue);
+  border-radius: 4px;
   font-family: 'Lemon Milk', sans-serif;
   font-weight: 700;
-  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  font-size: 0.7rem;
   text-transform: uppercase;
-  color: var(--white);
-  line-height: 1.3;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.1em;
+  color: var(--blue);
+  transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+.platform-btn:hover {
+  background: var(--blue);
+  color: var(--yellow);
+  transform: translateY(-2px);
+}
+.platform-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: currentColor;
 }
 
 /* ═══════════════════════════════════════════════
@@ -329,19 +355,20 @@ em {
 }
 
 /* ═══════════════════════════════════════════════
-   COMMUNITY  (yellow)
+   COMMUNITY  (blue)
 ═══════════════════════════════════════════════ */
 .community {
-  background-color: var(--yellow);
-  color: var(--blue);
+  color: var(--white);
   padding: var(--pad-y) var(--pad-x);
 }
 .community .container {
+  position: relative;
+  z-index: 1;
   max-width: var(--max-w);
   margin: 0 auto;
 }
 .community .label {
-  color: var(--blue);
+  color: var(--white);
 }
 .community h2 {
   font-size: clamp(3rem, 8vw, 7rem);
@@ -351,24 +378,24 @@ em {
 .social-links {
   display: flex;
   flex-direction: column;
-  border-top: 2px solid var(--blue);
+  border-top: 2px solid var(--white);
 }
 .social-link {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 22px 0;
-  border-bottom: 2px solid var(--blue);
+  border-bottom: 2px solid var(--white);
   font-family: 'Lemon Milk', sans-serif;
   font-weight: 700;
   font-size: clamp(1.4rem, 4vw, 3rem);
   text-transform: uppercase;
-  color: var(--blue);
+  color: var(--white);
   letter-spacing: -0.01em;
   transition: color 0.15s ease;
 }
 .social-link:hover {
-  color: var(--white);
+  color: var(--yellow);
 }
 .arrow {
   font-size: 0.65em;
