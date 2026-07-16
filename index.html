@@ -38,8 +38,11 @@
     <div class="container">
       <p class="label">Episodes</p>
 
+      <!-- Heading and summary are rewritten from the RSS feed by episodes.js.
+           What is hardcoded here is the fallback shown if that fetch fails.
+           The summary starts unclamped so it stays readable without JS. -->
       <div class="episode-main">
-        <h3 class="episode-title">ep 001: <em>Roots before Branches</em></h3>
+        <h3 class="episode-title" data-latest-title>ep 002<br><em>Trust before Process</em></h3>
 
         <iframe
           src="https://open.spotify.com/embed/show/033nlkT9kMrJMCIdnjpVR4"
@@ -48,16 +51,12 @@
           frameborder="0"
           allowtransparency="true"
           allow="encrypted-media"
-          title="Ship Now Cry Later on Spotify"
+          title="Latest episode of Ship Now, Cry Later on Spotify"
           loading="lazy">
         </iframe>
-      </div>
 
-      <div class="ep-next">
-        <h3>ep 002: <em>Trust before Process</em></h3>
-        <div class="ep-next-box">
-          <span class="ep-next-tag">Coming this Thursday</span>
-        </div>
+        <p class="episode-summary" id="episode-summary" data-latest-summary>Why do so many teams run every ceremony in the agile handbook and still not trust each other? Ana and Egle talk to Marion, a UX-designer-turned-agile-coach and trained mediator, about the difference between performative process and the slower, harder work of actually building trust.</p>
+        <button class="episode-more" type="button" data-summary-toggle aria-expanded="false" aria-controls="episode-summary" hidden>See more</button>
       </div>
 
       <!-- Show-level links — the podcast as a whole, not a single episode -->
@@ -173,5 +172,6 @@
     </div>
   </footer>
 
+  <script src="episodes.js"></script>
 </body>
 </html>
